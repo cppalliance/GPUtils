@@ -21,6 +21,324 @@ See also: https://en.cppreference.com/w/cpp/header/type_traits for an exhaustave
 namespace boost {
 namespace gpu {
 
+using integral_constant;
+using true_type;
+using false_type;
+
+// Primary type categories
+using is_void;
+using is_null_pointer;
+using is_integral;
+using is_floating_point;
+using is_array;
+using is_enum;
+using is_union;
+using is_class;
+using is_function;
+using is_pointer;
+using is_lvalue_reference;
+using is_rvalue_reference;
+using is_member_object_pointer;
+using is_member_function_pointer;
+
+// Composite Type Categories
+using is_fundamental;
+using is_arithmetic;
+using is_scalar;
+using is_object;
+using is_compound;
+using is_reference;
+using is_member_pointer;
+
+// Type properties
+using is_const;
+using is_volatile;
+using is_trivial;
+using is_trivially_copyable;
+using is_standard_layout;
+using is_empty;
+using is_polymorphic;
+using is_abstract;
+using is_final;
+using is_signed;
+using is_unsigned; 
+
+// Supported Operations
+using is_constructible;
+using is_trivially_constructible;
+using is_nothrow_constructible;
+
+using is_default_constructible;
+using is_trivially_default_constructible;
+using is_nothrow_default_constructible;
+
+using is_copy_constructible;
+using is_trivially_copy_constructible;
+using is_nothrow_copy_constructible;
+
+using is_move_constructible;
+using is_trivially_move_constructible;
+using is_nothrow_move_constructible;
+
+using is_assignable;
+using is_trivially_assignable;
+using is_nothrow_assignable;
+
+using is_copy_assignable;
+using is_trivially_copy_assignable;
+using is_nothrow_copy_assignable;
+
+using is_move_assignable;
+using is_trivially_move_assignable;
+using is_nothrow_move_assignable;
+
+using is_destructible;
+using is_trivially_destructible;
+using is_nothrow_destructible;
+
+using has_virtual_destructor;
+
+// Property Queries
+using alignment_of;
+using rank;
+using extent;
+
+// Type Relationships
+using is_same;
+using is_base_of;
+using is_convertible;
+
+// Const-volatility specifiers
+using remove_cv;
+using remove_cv_t;
+using remove_const;
+using remove_const_t;
+using remove_volatile;
+using remove_volatile_t;
+using add_cv;
+using add_cv_t;
+using add_const;
+using add_const_t;
+using add_volatile;
+using add_volatile_t;
+
+// References
+using remove_reference;
+using remove_reference_t;
+using add_lvalue_reference;
+using add_lvalue_reference_t;
+using add_rvalue_reference;
+using add_rvalue_reference_t;
+
+// Pointers
+using remove_pointer;
+using remove_pointer_t;
+using add_pointer;
+using add_pointer_t;
+
+// Sign Modifiers
+using make_signed;
+using make_signed_t;
+using make_unsigned;
+using make_unsigned_t;
+
+// Arrays
+using remove_extent;
+using remove_extent_t;
+using remove_all_extents;
+using remove_all_extents_t;
+
+// Misc transformations
+using decay;
+using decay_t;
+using enable_if;
+using enable_if_t;
+using conditional;
+using conditional_t;
+using common_type;
+using common_type_t;
+using underlying_type;
+using underlying_type_t;
+
+template <bool B>
+using bool_constant = boost::gpu::integral_constant<bool, B>;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_void_v = boost::gpu::is_void<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_null_pointer_v = boost::gpu::is_null_pointer<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_integral_v = boost::gpu::is_integral<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_floating_point_v = boost::gpu::is_floating_point<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_array_v = boost::gpu::is_array<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_enum_v = boost::gpu::is_enum<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_union_v = boost::gpu::is_union<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_class_v = boost::gpu::is_class<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_function_v = boost::gpu::is_function<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_pointer_v = boost::gpu::is_pointer<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_lvalue_reference_v = boost::gpu::is_lvalue_reference<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_rvalue_reference_v = boost::gpu::is_rvalue_reference<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_member_object_pointer_v = boost::gpu::is_member_object_pointer<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_member_function_pointer_v = boost::gpu::is_member_function_pointer<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_fundamental_v = boost::gpu::is_fundamental<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_arithmetic_v = boost::gpu::is_arithmetic<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_scalar_v = boost::gpu::is_scalar<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_object_v = boost::gpu::is_object<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_compound_v = boost::gpu::is_compound<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_reference_v = boost::gpu::is_reference<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_member_pointer_v = boost::gpu::is_member_pointer<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_const_v = boost::gpu::is_const<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_volatile_v = boost::gpu::is_volatile<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_trivial_v = boost::gpu::is_trivial<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_trivially_copyable_v = boost::gpu::is_trivially_copyable<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_standard_layout_v = boost::gpu::is_standard_layout<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_empty_v = boost::gpu::is_empty<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_polymorphic_v = boost::gpu::is_polymorphic<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_abstract_v = boost::gpu::is_abstract<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_final_v = boost::gpu::is_final<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_signed_v = boost::gpu::is_signed<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_unsigned_v = boost::gpu::is_unsigned<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_constructible_v = boost::gpu::is_constructible<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_trivially_constructible_v = boost::gpu::is_trivially_constructible<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_nothrow_constructible_v = boost::gpu::is_nothrow_constructible<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_default_constructible_v = boost::gpu::is_default_constructible<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_trivially_default_constructible_v = boost::gpu::is_trivially_default_constructible<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_nothrow_default_constructible_v = boost::gpu::is_nothrow_default_constructible<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_copy_constructible_v = boost::gpu::is_copy_constructible<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_trivially_copy_constructible_v = boost::gpu::is_trivially_copy_constructible<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_nothrow_copy_constructible_v = boost::gpu::is_nothrow_copy_constructible<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_move_constructible_v = boost::gpu::is_move_constructible<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_trivially_move_constructible_v = boost::gpu::is_trivially_move_constructible<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_nothrow_move_constructible_v = boost::gpu::is_nothrow_move_constructible<T>::value;
+
+template <typename T, typename U>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_assignable_v = boost::gpu::is_assignable<T, U>::value;
+
+template <typename T, typename U>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_trivially_assignable_v = boost::gpu::is_trivially_assignable<T, U>::value;
+
+template <typename T, typename U>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_nothrow_assignable_v = boost::gpu::is_nothrow_assignable<T, U>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_copy_assignable_v = boost::gpu::is_copy_assignable<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_trivially_copy_assignable_v = boost::gpu::is_trivially_copy_assignable<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_nothrow_copy_assignable_v = boost::gpu::is_nothrow_copy_assignable<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_move_assignable_v = boost::gpu::is_move_assignable<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_trivially_move_assignable_v = boost::gpu::is_trivially_move_assignable<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_nothrow_move_assignable_v = boost::gpu::is_nothrow_move_assignable<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_destructible_v = boost::gpu::is_destructible<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_trivially_destructible_v = boost::gpu::is_trivially_destructible<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_nothrow_destructible_v = boost::gpu::is_nothrow_destructible<T>::value;
+
+template <typename T>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool has_virtual_destructor_v = boost::gpu::has_virtual_destructor<T>::value;
+
+template <typename T, typename U>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_same_v = boost::gpu::is_same<T, U>::value;
+
+template <typename T, typename U>
+BOOST_GPUTILS_INLINE_CONSTEXPR bool is_base_of_v = boost::gpu::is_base_of<T, U>::value;
 
 } //namespace gpu
 } //namespace boost
