@@ -8,5 +8,6 @@
 
 #include <boost/gputils/config.hpp>
 #include <boost/gputils/type_traits.hpp>
+#include <boost/gputils/utility.hpp>
 
 #endif // BOOST_GPUTILS_HPP
