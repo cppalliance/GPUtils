@@ -1,0 +1,21 @@
+////
+Copyright 2024 Matt Borland
+Distributed under the Boost Software License, Version 1.0.
+https://www.boost.org/LICENSE_1_0.txt
+////
+
+= GPUitls: Utilites for GPU library programming
+:toc: left
+:toclevels: 4
+:idprefix:
+:listing-caption: Code Example
+:docinfo: private-footer
+:source-highlighter: rouge
+:source-language: c++
+
+:leveloffset: +1
+
+inlcude::gputils/overview.adoc[]
+include::gputils/type_traits.adoc[]
+
+:leveloffset: -1
