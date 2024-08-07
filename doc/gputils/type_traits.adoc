@@ -1,0 +1,29 @@
+////
+Copyright 2024 Matt Borland
+Distributed under the Boost Software License, Version 1.0.
+https://www.boost.org/LICENSE_1_0.txt
+////
+
+[#type_traits]
+= <type_traits> support
+:idprefix: type_traits_
+
+When programming with CUDA platforms you can not directly use the normal `<type_traits>` header,
+as it provides similar functionality in `<cuda/std/type_traits>`.
+Here we provide an alias that allows both of the type_traits to be used seamlessly between platforms.
+We also provide C++17 overloads such as `is_same_v` for pure convinence.
+See also: https://en.cppreference.com/w/cpp/header/type_traits for an exhaustave list and proper documentation.
+
+[source, c++]
+----
+#include <boost/gpu/type_traits.hpp>
+
+namespace boost {
+namespace gpu {
+
+
+} //namespace gpu
+} //namespace boost
+----
+
+
