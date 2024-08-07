@@ -1,0 +1,63 @@
+////
+Copyright 2024 Matt Borland
+Distributed under the Boost Software License, Version 1.0.
+https://www.boost.org/LICENSE_1_0.txt
+////
+
+[#overview]
+= Overview
+:idprefix: overview_
+
+== Description
+
+Boost.GPUtils is a set of utilities, configuration macros, and workarounds to support CUDA and SYCL from new or existing libraries.
+The library is header-only, has no dependencies, and requires C++14.
+
+== Motivation
+
+Adding GPU and especially CUDA support to libraries is becoming of increasing importance.
+As we worked through these problems in Boost.Math we found that we need to create a number of internal utilities to allow existing CPU support co-exist with different kinds of GPU libraries such as CUDA and SYCL.
+Now these utilities are available to you the library author or developer so that you don't have to face the same challenges that we did.
+
+== Use Cases
+
+Adding GPU support can cover a wide range of programs that are ripe for massive parallelism such as math as mentioned in the paragraph above.
+
+== Supported Compilers
+
+Boost.GPUtils is tested on Ubuntu 22.04 and RHEL 9.4 with:
+
+* NVIDIA CUDA toolkit 12.5 and later
+* Intel oneAPI DPCPP 2024.2.1 and later
+
+////
+Tested on https://github.com/cppalliance/decimal/actions[Github Actions] and https://drone.cpp.al/cppalliance/decimal[Drone].
+Coverage can be found on https://app.codecov.io/gh/cppalliance/decimal[Codecov].
+
+== Basic Usage
+
+[source, c++]
+----
+#include <boost/decimal.hpp>
+#include <iostream>
+#include <iomanip>
+
+int main()
+{
+    using namespace boost::decimal;
+
+    // Outputs 0.30000000000000004
+    std::cout << std::setprecision(17) << 0.1 + 0.2;
+
+    // Construct the two decimal values
+    constexpr decimal64 a {1, -1}; // 1e-1 or 0.1
+    constexpr decimal64 b {2, -1}; // 2e-1 or 0.2
+
+    // Outputs 0.30000000000000000
+    std::cout << a + b << std::endl;
+
+    return 0;
+}
+
+----
+////
