@@ -8,6 +8,11 @@
 
 #ifdef __CUDACC__
 
+// We have to get our include order correct otherwise you get compilation failures
+#include <cuda.h>
+#include <cuda_runtime.h>
+#include <cuda/std/type_traits>
+
 #  define BOOST_GPUTILS_CUDA_ENABLED __host__ __device__
 #  define BOOST_GPUTILS_HAS_GPU_SUPPORT
 
