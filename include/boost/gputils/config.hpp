@@ -36,6 +36,16 @@
 #  undef BOOST_GPUTILS_FORCEINLINE
 #  define BOOST_GPUTILS_FORCEINLINE inline
 
+#elif defined(__CUDACC_RTC__)
+
+#  define BOOST_GPUTILS_HAS_CUDA
+#  define BOOST_GPUTILS_CUDA_ENABLED __host__ __device__
+#  define BOOST_GPUTILS_HAS_GPU_SUPPORT
+
+#  ifndef BOOST_MATH_HAS_NVRTC
+#    define BOOST_MATH_HAS_NVRTC
+#  endif
+
 #endif
 
 #ifndef BOOST_GPUTILS_CUDA_ENABLED
