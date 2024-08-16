@@ -12,5 +12,6 @@
 #include <boost/gputils/cuda_managed_ptr.hpp>
 #include <boost/gputils/limits.hpp>
 #include <boost/gputils/tuple.hpp>
+#include <boost/gputils/cstdint.hpp>
 
 #endif // BOOST_GPUTILS_HPP

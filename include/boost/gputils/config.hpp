@@ -13,6 +13,7 @@
 #include <cuda_runtime.h>
 #include <cuda/std/type_traits>
 #include <cuda/std/utility>
+#include <cuda/std/cstdint>
 
 #  define BOOST_GPUTILS_CUDA_ENABLED __host__ __device__
 #  define BOOST_GPUTILS_HAS_GPU_SUPPORT
