@@ -8,12 +8,12 @@
 
 #include <boost/gputils/config.hpp>
 
-namespace boost {
-namespace gpu {
-
 #ifdef BOOST_GPUTILS_HAS_CUDA
 
 #include <cuda/std/type_traits>
+
+namespace boost {
+namespace gpu {
 
 // Helper classes
 using cuda::std::integral_constant;
@@ -158,6 +158,9 @@ using cuda::std::underlying_type_t;
 #else // STD versions
 
 #include <type_traits>
+
+namespace boost {
+namespace gpu {
 
 // Helper classes
 using std::integral_constant;
