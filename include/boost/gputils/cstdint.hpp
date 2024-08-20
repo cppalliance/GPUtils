@@ -101,7 +101,7 @@ using std::size_t;
 
 #endif
 
-} // namespace math
+} // namespace gpu
 } // namespace boost
 
 #endif // BOOST_MATH_TOOLS_CSTDINT

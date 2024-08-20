@@ -13,5 +13,6 @@
 #include <boost/gputils/limits.hpp>
 #include <boost/gputils/tuple.hpp>
 #include <boost/gputils/cstdint.hpp>
+#include <boost/gputils/array.hpp>
 
 #endif // BOOST_GPUTILS_HPP
