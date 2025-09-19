@@ -28,8 +28,8 @@ using cuda::std::tuple_size;
 using cuda::std::tuple_element;
 
 
-// The cuda/std is missing make_tuple so we need to implment it
-// To properly implment it we need std::forward so we get that along the way too
+// The cuda/std is missing make_tuple so we need to implement it
+// To properly implement it we need std::forward so we get that along the way too
 namespace detail {
 
 template <typename T>
