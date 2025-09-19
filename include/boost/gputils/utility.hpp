@@ -8,8 +8,6 @@
 
 #include <boost/gputils/config.hpp>
 
-#ifndef BOOST_GPUTILS_HAS_CUDA
-
 namespace boost {
 namespace gpu {
 
@@ -35,21 +33,5 @@ BOOST_GPUTILS_GPU_ENABLED constexpr T max(const T a, const T b)
 
 } // namespace gpu
 } // namespace boost
-
-#else
-
-#include <utility>
-
-namespace boost {
-namespace gpu {
-
-using std::max;
-using std::min;
-using std::swap;
-
-}
-}
-
-#endif
 
 #endif // BOOST_GPUTILS_UTILITY_HPP
