@@ -3,8 +3,8 @@
 //  Boost Software License, Version 1.0. (See accompanying file
 //  LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 
-#ifndef BOOST_GPUTILS_CSTDINT_HPP
-#define BOOST_GPUTILS_CSTDINT_HPP
+#ifndef BOOST_GPUTILS_ARRAY_HPP
+#define BOOST_GPUTILS_ARRAY_HPP
 
 #include <boost/gputils/config.hpp>
 
@@ -31,4 +31,4 @@ using std::array;
 } // namespace gputils
 } // namespace boost
 
-#endif // BOOST_MATH_TOOLS_CSTDINT
+#endif // BOOST_GPUTILS_ARRAY_HPP
