@@ -15,5 +15,6 @@
 #include <boost/gputils/cstdint.hpp>
 #include <boost/gputils/array.hpp>
 #include <boost/gputils/assert.hpp>
+#include <boost/gputils/throw_exception.hpp>
 
 #endif // BOOST_GPUTILS_HPP
