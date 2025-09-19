@@ -11,6 +11,10 @@
 #pragma once
 #endif
 
+#include <boost/gputils/config.hpp>
+
+#ifdef BOOST_GPUTILS_HAS_CUDA
+
 #include <cuda_runtime.h>
 
 class managed_holder_base
@@ -138,5 +142,7 @@ public:
 
 template <class T>
 cudaResetter const cuda_managed_ptr<T>::resetter;
+
+#endif
 
 #endif // BOOST_GPUTILS_CUDA_MANAGED_PTR_HPP
